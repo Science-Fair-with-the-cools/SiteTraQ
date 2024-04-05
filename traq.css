@@ -276,7 +276,7 @@ footer{
 
   .website{
     position: relative;
-    left: 29%;
+    left: 15%;
     border-radius: 7px;
     background-color: var(--formbg);
     color: var(--formtextcol);
