@@ -208,6 +208,11 @@ input[type="number"] {
   border-radius: 5px;
 }
 
+#sitetraqdesc{
+  padding-left: 15rem;
+  padding-right: 15rem;
+}
+
 a:link {
   color: var(--textcol);
   background-color: transparent;
@@ -270,9 +275,4 @@ footer{
     border-radius: 7px;
     background-color: var(--formbg);
     color: var(--formtextcol);
-  }
-
-  #sitetraqdesc{
-    padding-left: 15rem;
-    padding-right: 15rem;
   }
