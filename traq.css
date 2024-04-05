@@ -281,3 +281,20 @@ footer{
     background-color: var(--formbg);
     color: var(--formtextcol);
   }
+#input-container {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  margin-bottom: 20px; /* Add some space between input and result */
+}
+
+input[type="text"] {
+  font-size: 1.00rem;
+  width: 35vw;
+  text-align: center;
+  margin-right: 30px; /* Add some space between input and submit button */
+}
+
+input[type="submit"] {
+  width: 100px; /* Adjust width as needed */
+}
