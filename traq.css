@@ -298,3 +298,8 @@ input[type="text"] {
 input[type="submit"] {
   width: 100px; /* Adjust width as needed */
 }
+
+p {
+max-width: 45%
+  
+}
