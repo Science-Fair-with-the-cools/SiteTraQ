@@ -271,3 +271,8 @@ footer{
     background-color: var(--formbg);
     color: var(--formtextcol);
   }
+
+  #sitetraqdesc{
+    padding-left: 15rem;
+    padding-right: 15rem;
+  }
