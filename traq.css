@@ -195,8 +195,7 @@ input[type="submit"] {
   width: 8.75%;
   height: 1.7rem;
   border-radius: 5px;
-  top: 0.3rem;
-  bottom: 1rem; /* Adjusted the positioning */
+  top: 0.1rem;
   margin: auto; /* Added to center horizontally */
   display: block; /* Ensures it takes full width */
 }
