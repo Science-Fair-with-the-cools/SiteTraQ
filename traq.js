@@ -5,7 +5,7 @@ async function fetchWebsiteTraffic() {
     const options = {
         method: 'GET',
         headers: {
-            'X-RapidAPI-Key': '23731827d5mshdcd8f2130ec4bcbp16342fjsndacfa352740f',
+            'X-RapidAPI-Key': '8e6df0708fmshee6a3982cd62b62p147c5djsnf0727b98b2a7',
             'X-RapidAPI-Host': 'website-intelligence.p.rapidapi.com'
         }
     };
