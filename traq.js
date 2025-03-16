@@ -40,7 +40,7 @@ function backToTop() {
 function processLink() {
     const input = document.getElementById("linkInput").value;
     const spinner = document.getElementById("loadingSpinner");
-    const output = document.getElementById("output");
+    const result = document.getElementById("result");
 
     if (!input) {
         alert("Please enter a link.");
@@ -49,12 +49,12 @@ function processLink() {
 
     // Show the spinner
     spinner.style.display = "block";
-    output.textContent = "";
+    result.textContent = "";
 
     // Simulate processing delay
     setTimeout(() => {
         spinner.style.display = "none";
-        output.textContent = "Processed result for: " + input;
+        result.textContent = "Processed result for: " + input;
     }, 10000); 
     // Simulate a 10-second delay
 }
