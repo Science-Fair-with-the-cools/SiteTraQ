@@ -15,7 +15,8 @@ async function fetchWebsiteTraffic() {
     try {
         const response = await fetch(apiUrl, options);
         const result = await response.json();
-        console.log(result); // Log the result object to inspect its structure
+        console.log(result); 
+        // Log the result object to inspect its structure
         // Access the website traffic using the correct property path
         const websiteTraffic = result.data.info.semrush_summary.semrush_visits_latest_month;
         // Calculate carbon emissions in tons
@@ -34,4 +35,26 @@ document.getElementById("submit").addEventListener("click", fetchWebsiteTraffic)
 function backToTop() {
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
+}
+
+function processLink() {
+    const input = document.getElementById("linkInput").value;
+    const spinner = document.getElementById("loadingSpinner");
+    const output = document.getElementById("output");
+
+    if (!input) {
+        alert("Please enter a link.");
+        return;
+    }
+
+    // Show the spinner
+    spinner.style.display = "block";
+    output.textContent = "";
+
+    // Simulate processing delay
+    setTimeout(() => {
+        spinner.style.display = "none";
+        output.textContent = "Processed result for: " + input;
+    }, 10000); 
+    // Simulate a 10-second delay
 }
