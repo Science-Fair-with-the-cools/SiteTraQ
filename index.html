@@ -11,10 +11,6 @@
 </head>
 
 <body>
-  <!-- language buttons -->
-  <button onclick="switchLanguage('en')" id="langbutton-en">English</button>
-  <button onclick="switchLanguage('fr')" id="langbutton-fr"><a href="https://science-fair-with-the-cools.github.io/SiteTraqFR/">French</button></a>
-
   <main>
 <h1>SiteTraQ</h1>
     <h3 id="subtitle">A Carbon Footprint Calculator</h3>
@@ -40,8 +36,12 @@
 
     <h2>Paste Website Link Here</h2>
 <div id="input_container">
-    <input type="text" class="website" placeholder="https://www.example.ca" style="font-size:1.00rem;width:35vw;text-align:center;margin-right:30%">
-    <input id="submit" type="submit">
+  <input type="text" id="linkInput" class="website" placeholder="https://www.example.ca">
+  <button onclick="processLink()">Submit</button>
+
+  <div class="spinner" id="loadingSpinner"></div>
+
+  <p id="output"></p>
 </div>
     <div id="result"></div> <!-- This is the div to display the result -->
     <br>
@@ -60,12 +60,11 @@
   <p id="credits">Designed completely in HTML, CSS, and JS. All results are to be taken as near estimates based on Canadian/Ontario
     averages, and national/provincial data. </p>
   <p id="credits1">Created by: Cameron Lemoine and Hasan Ahmed</p>
-  <p id="credits2"> With help from: Will Reavie and Aaron Chung</p>
+  <p id="credits2"> With help from: Daegan Hartman, Will Reavie, and Aaron Chung</p>
   <p>
-    <a href="https://github.com/Science-Fair-with-the-cools/EcoTraQ" id="github" target="_blank">GitHub Repository</a>
+    <a href="https://github.com/Science-Fair-with-the-cools/EcoTraQ" id="github" target="_blank">GitHub</a>
   <div>
-    <a href="https://projectboard.world/ysc/project/ecotraq-carbon-footprint-calculator" id="pbpage" target="_blank">ProjectBoard
-      Page</a>
+    <a href="https://projectboard.world/ysc/project/ecotraq-carbon-footprint-calculator" id="pbpage" target="_blank">ProjectBoard</a>
     <div>
       <br>
       <a href="https://www.dropbox.com/scl/fi/nu5uc4ykhm51pbvhqn26s/Sources-for-Ottawa-Regional-Science-Fair-EcoTraQ.pdf?rlkey=g6tgpyron6yiebu480syyd8or&dl=0" target="_blank">Sources</a>
