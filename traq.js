@@ -1,3 +1,4 @@
+
 async function fetchLookupData(websiteUrl) {
     const apiUrl = `https://website-intelligence.p.rapidapi.com/lookup?domain=${encodeURIComponent(websiteUrl)}`;
     const options = {
