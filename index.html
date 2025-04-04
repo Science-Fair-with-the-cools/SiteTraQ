@@ -27,17 +27,11 @@
 
       </div>
     </div>
-    <!-- Brief desc of project -->
-    <div id="sitetraqdesc">
-      <h2>What is SiteTraQ?</h2>
-      <p>Every single website on the internet has a carbon footprint. Physical hosting servers use electricity that use non-renewable energy sources to keep our internet alive as we know it. Want to know what a website's annual carbon footprint is? Find out by navigating to the "SiteTraQ" tab. 
-        Find out Below!</p>
-    </div>
 
     <h2>Paste Website Link Here</h2>
 <div id="input_container">
   <input type="text" id="linkInput" class="website" placeholder="https://www.example.ca">
-  <button onclick="processLink()">Submit</button>
+  <button onclick="processLink()" id = "submit">Submit</button>
 
   <div class="spinner" id="loadingSpinner"></div>
 </div>
@@ -45,9 +39,6 @@
     <br>
     <div id="context">
     The websites Carbon Footprint is made up of many factors. This takes in to account a specific page specifications, page views, high data content, site traffic, etc.. </div>
-
-    <br>
-    <br>
     <p>These calculations are estimates based on monthly site traffic multiplied by the average emissions of a mid-sized website. Real numbers may be slightly higher or lower based on data capabilities of site.</p>
   
     <script src="traq.js"></script>
@@ -68,8 +59,6 @@
     </div>
   </div>
   </p>
-  <div class="buttons">
-    <button id="topbtn" onclick="backToTop()">Back to top</button>
 
 
   </div>
