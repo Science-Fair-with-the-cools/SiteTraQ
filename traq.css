@@ -1,16 +1,157 @@
- /* Style the spinner */
-        .spinner {
-            display: none;
-            width: 50px; /* Increased size */
-            height: 50px;
-            border: 6px solid #ccc; /* Thicker border */
-            border-top: 6px solid #064e3b; /* Dark green */
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-            margin: 15px auto;
-        }
+ * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
+/* Overall Page Layout */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #104730;
+    /* Deep green background */
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Center content vertically */
+    text-align: center; /* Ensure text is centered */
+}
+
+/* Navigation Bar */
+#header {
+    width: 100%;
+    background-color: #A67B5C; /* Warm brown */
+    color: #fff;
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 10px;
+    text-align: center;
+}
+
+/* Ensure heading is centered */
+#header h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+/* Navigation links */
+#header .sites {
+    display: flex;
+    gap: 15px; /* Add spacing between links */
+}
+
+#header .sites a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+#header .sites a:hover {
+    text-decoration: line-through;
+}
+
+/* Input Field */
+input[type="text"] {
+    width: 60%;
+    padding: 10px;
+    margin: 20px auto; /* Centers input field */
+    border: 1px solid #d2a679;
+    border-radius: 5px;
+    display: block; /* Ensures it doesn't extend full width */
+}
+
+h2 {
+    padding-top: 1rem;
+}
+
+/* Buttons */
+button {
+    background-color: #d2a679;
+    color: #004d2c;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 10px auto; /* Centers the button */
+    display: block;
+}
+
+button:hover {
+    background-color: #b58c5b; /* Slightly darker brown hover effect */
+}
+
+/* Results Section */
+.results {
+    background-color: #d2a679;
+    padding: 20px;
+    margin: 20px auto; /* Centers the results container */
+    border-radius: 5px;
+    width: 80%; /* Limits width for better readability */
+}
+
+/* Footer */
+footer {
+    position: relative;
+    top: 18rem;
+    width: 100%;
+    background-color: #A67B5C;
+    padding: 15px 0;
+    text-align: center;
+    margin-top: 30px;
+    border-radius: 10px;
+}
+
+footer #links {
+    display: flex;
+    justify-content: center; /* Centers links horizontally */
+    gap: 15px;
+}
+
+footer #links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+#links a:hover {
+    text-decoration: line-through;
+}
+
+footer select {
+    padding: 5px;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+button {
+    background-color: #A67B5C;
+    color: white;
+
+    width: 12rem;
+    height: 2.25rem;
+}
+
+button:hover {
+    background-color: #b58c5b;
+}
+
+/* Style the spinner */
+.spinner {
+    display: none;
+    width: 50px; /* Increased size */
+    height: 50px;
+    border: 6px solid #ccc; /* Thicker border */
+    border-top: 6px solid #064e3b; /* Dark green */
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 15px auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
