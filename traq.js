@@ -1,60 +1,61 @@
-async function fetchWebsiteTraffic() {
-    const websiteUrl = document.querySelector('.website').value;
+async function fetchLookupData(websiteUrl) {
     const apiUrl = `https://website-intelligence.p.rapidapi.com/lookup?domain=${encodeURIComponent(websiteUrl)}`;
-
     const options = {
         method: 'GET',
         headers: {
-            //'X-RapidAPI-Key': '23731827d5mshdcd8f2130ec4bcbp16342fjsndacfa352740f',
-            'X-RapidAPI-Key': '8e6df0708fmshee6a3982cd62b62p147c5djsnf0727b98b2a7',
-            //'X-RapidAPI-Key': 'd7df1fc848mshec11718a9da6e84p15cab2jsn657e213bc47d'
-            'X-RapidAPI-Host': 'website-intelligence.p.rapidapi.com'
+            'x-rapidapi-key': '447c7eba54mshecf0f2282d975eep178deajsn1134922385a6',
+            //'x-rapidapi-key': 'a77d2c800emsh715213cda2a27b4p155967jsn6071b034b404',
+            'x-rapidapi-host': 'website-intelligence.p.rapidapi.com'
         }
     };
 
     try {
         const response = await fetch(apiUrl, options);
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
         const result = await response.json();
-        console.log(result); 
-        // Log the result object to inspect its structure
-        // Access the website traffic using the correct property path
-        const websiteTraffic = result.data.info.semrush_summary.semrush_visits_latest_month;
-        // Calculate carbon emissions in tons
-        const carbonEmissions = websiteTraffic * 1.76 / 1000000; // Convert grams to tons
-        const resultDiv = document.getElementById('result');
-        resultDiv.textContent = `Carbon emissions: ${carbonEmissions.toFixed(2)} tons (per year) from website traffic data`;
+        return result;
     } catch (error) {
-        console.error(error);
+        console.error("Error fetching all website data:", error);
+        return null;
     }
 }
 
-// Add event listener to the submit button
-document.getElementById("submit").addEventListener("click", fetchWebsiteTraffic);
-
-// Function to scroll back to the top of the page
-function backToTop() {
-    document.body.scrollTop = 0;
-    document.documentElement.scrollTop = 0;
-}
-
-function processLink() {
-    const input = document.getElementById("linkInput").value;
+async function processLink() {
+    const websiteUrl = document.getElementById("linkInput").value;
     const spinner = document.getElementById("loadingSpinner");
-    const result = document.getElementById("result");
+    const resultDiv = document.getElementById("result");
 
-    if (!input) {
-        alert("Please enter a link.");
+    if (!websiteUrl) {
+        alert("Please enter a website URL.");
         return;
     }
 
-    // Show the spinner
     spinner.style.display = "block";
-    result.textContent = "";
+    resultDiv.textContent = "";
 
-    // Simulate processing delay
-    setTimeout(() => {
-        spinner.style.display = "none";
-        result.textContent = "Processed result for: " + input;
-    }, 10000); 
-    // Simulate a 10-second delay
+    try {
+    const allWebsiteData = await fetchLookupData(websiteUrl); // Change function call
+    // ...
+    if (allWebsiteData && allWebsiteData.data && allWebsiteData.data.info && allWebsiteData.data.info.semrush_summary && allWebsiteData.data.info.semrush_summary.semrush_visits_latest_month) {
+        const websiteTraffic = allWebsiteData.data.info.semrush_summary.semrush_visits_latest_month; // Change data path
+                const carbonEmissions = websiteTraffic * 1.76 / 1000000;
+                resultDiv.textContent = `Carbon emissions: ${carbonEmissions.toFixed(2)} tons (per year) from website traffic data`;
+            } else {
+                resultDiv.textContent = "Website data not available. Please try another website.";
+            }
+        } catch (error) {
+            // Error handling
+            console.error("An error occurred:", error);
+        } finally {
+            // Cleanup code
+            console.log("Finally block executed.");
+            spinner.style.display = "none";
+        }
+}
+
+function backToTop() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
 }
